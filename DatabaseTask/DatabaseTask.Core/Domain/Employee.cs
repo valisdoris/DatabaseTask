@@ -7,8 +7,18 @@ namespace DatabaseTask.Core.Domain
     {
         [Key]
         public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+
+        public int TöötajaNumber { get; set; }
+        public Isik Isik { get; set; }
+        public string LepinguNumber { get; set; }
+        public DateTime TöösuhteAlgus { get; set; }
+        public bool TöösuheKehtiv { get; set; }
+        public DateTime? TöösuhteLõpp { get; set; }
+        public int TööTelefon { get; set; }
+        public string TööEmail { get; set; }
+        public string Kontonumber { get; set; }
+        public int TulumaksuvabaSumma { get; set; }
+
 
         /// ESIMENE HINDELINE HARJUTUS
         /// Nõuded ja tegevus:
@@ -52,7 +62,19 @@ namespace DatabaseTask.Core.Domain
         /// </summary>
         /// Kas peaks objekti initsialiseerima või mitte
         //public IEnumerable<Children> Childrens { get; set; } = new List<Children>();
-        //public ICollection<Children> Childrens { get; set; }
+        public ICollection<TöötajaLaps>? Childrens { get; set; }
+        public ICollection<TöötajaPalve>? TöötajaPalves { get; set; }
+        public ICollection<TöötajaLigipääs> TöötajaLigipääs { get; set; }
+        public ICollection<TöötajaAmetinimetus> TöötajaAmetinimetus { get; set; }
+        public ICollection<Tööleping> Töölepings { get; set; }
+        public ICollection<Tervisekontroll> Tervisekontrolls { get; set; }
+        public ICollection<Puhkus> Puhkus { get; set; }
+        public ICollection<Palk> Palks { get; set; }
+        public ICollection<OsakonnaTöötaja> OsakonnaTöötajas { get; set; }
+        public ICollection<Osakonnajuht> Osakonnajuhts { get; set; }
+        public ICollection<Laenutus> Laenutus { get; set; }
+        public ICollection<Koolitus> Koolitus { get; set; }
+        public ICollection<Haigusleht> Haiguslehts { get; set; }
         //public List<Children> Childrens { get; set; }
     }
 
